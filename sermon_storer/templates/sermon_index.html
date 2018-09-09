@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="container">
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h2>Sermon List</h2>
+
+
+<form action="/sermons/update/" method="post">
+    {% csrf_token %}
+    {{ pswd_form }}
+    <p></p>
+    <input type="submit" name='update_sermons' value="Update From FTP" />
+    <input type="submit" name='download_sermon' value="Download Sermon" />
+</form>
+
+<p></p>
+
+<a href={{ oauth_url }}>Authorize Podbean</a>
+
+<p></p>
+<p></p>
+
+</div>
+
+{% endblock %}

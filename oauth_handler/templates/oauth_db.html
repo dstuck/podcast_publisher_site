@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="container">
+
+
+<h2>Page View Report</h2>
+
+
+<ul>
+
+{% for oauthkey in oauthkeys %}
+    <li>{{ oauthkey.access_token }} {{ oauthkey.expires_in }} {{ oauthkey.scope }} {{ oauthkey.token_type }} </li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="container">
+
+
+<h2>Thank You For Registering With Podbean</h2>
+
+
+<ul>
+
+    <li>{{ key.access_token }} {{ key.expires_in }} {{ key.scope }} {{ key.token_type }} </li>
+
+</ul>
+
+</div>
+
+{% endblock %}
